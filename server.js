@@ -1,12 +1,13 @@
 var express = require('express');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
-var connection = require('./config/connection');
+//var sequelize = require('./config/connection');
 var exphbs = require('express-handlebars');
 var Handlebars = require('handlebars');
 var path = require('path');
 var app = express();
-var routes = require('./controllers/burgers_controller');
+//var routes = require('./controllers/burgers_controller');
+var db = require("./models");
 
 app.use(express.static('public'));
 
@@ -24,11 +25,13 @@ Handlebars.registerHelper("inc", function(value, options) {
     return parseInt(value) + 1;
 });
 
-app.use("/", routes);
+//app.use("/", routes);
 
+db.sequelize.sync().then(function() {
 
+    app.listen(PORT, function() {
 
-app.listen(PORT, function() {
+        console.log("Server listening on port %s", PORT);
+    });
 
-    console.log("Server listening on port " + PORT);
 });

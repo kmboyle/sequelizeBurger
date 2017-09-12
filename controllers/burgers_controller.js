@@ -1,11 +1,11 @@
 var express = require('express');
-var burger = require('../models/burger');
+var Burger = require('../models');
 
 // Create the `router` for the app, and export the `router` at the end of your file.
 var router = express.Router();
 
 router.get("/", function(req, res) {
-    burger.all(function(data) {
+    Burger.findAll({}).then(function(data) {
         //creating an object to hold each object from the database
         var burgerObj = {
             burgerArray: data
@@ -17,8 +17,9 @@ router.get("/", function(req, res) {
 });
 router.post("/", function(req, res) {
     //calling the create method and passing the name from the user text field
-    burger.create(
-        "burger_name", req.body.newBurger,
+    Burger.create({
+            burger_name: req.body.newBurger
+        },
         function() {
             res.redirect("/");
         });
@@ -27,7 +28,7 @@ router.post("/", function(req, res) {
 router.put("/:id", function(req, res) {
     //updating the burger state to "devoured", passing the database id and the body.devoured as the column reference
     var condition = "id = " + req.params.id;
-    burger.update(req.body.devoured, condition, function() {
+    Burger.update(req.body.devoured, condition, function() {
         res.redirect("/");
     });
 });
@@ -35,8 +36,13 @@ router.put("/:id", function(req, res) {
 router.delete("/:id", function(req, res) {
     var condition = "id = " + req.params.id;
     //same here, except passing only the id of the burger so it can be deleted from the database
-    burger.delete(condition, function() {
-        res.redirect("/");
+    Burger.destroy({
+        where: {
+            id: condition
+        },
+        function() {
+            res.redirect("/");
+        }
     });
 });
 

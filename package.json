@@ -1,5 +1,5 @@
 {
-    "name": "burger",
+    "name": "sequelizeBooygah",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
@@ -16,6 +16,18 @@
         "express-handlebars": "^3.0.0",
         "handlebars": "^4.0.10",
         "method-override": "^2.3.9",
-        "mysql": "^2.14.1"
-    }
+        "mysql": "^2.14.1",
+        "mysql2": "^1.4.2",
+        "sequelize": "^4.8.3",
+        "sequelize-cli": "^3.0.0-2"
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kmboyle/sequelizeBurger.git"
+    },
+    "bugs": {
+        "url": "https://github.com/kmboyle/sequelizeBurger/issues"
+    },
+    "homepage": "https://github.com/kmboyle/sequelizeBurger#readme"
 }
