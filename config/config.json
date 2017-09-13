@@ -14,8 +14,8 @@
         "dialect": "mysql"
     },
     "production": {
-        "username": "cnwm93jvx3usvfyz",
-        "password": "glszaibj91pthiqc",
+        "username": "tssohgmi7fd6pn6w",
+        "password": "i5qzt6x1nqfflkot",
         "database": "JawsDB",
         "host": "127.0.0.1",
         "dialect": "mysql"
