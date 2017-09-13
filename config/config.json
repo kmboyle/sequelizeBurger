@@ -17,7 +17,7 @@
         "username": "tssohgmi7fd6pn6w",
         "password": "i5qzt6x1nqfflkot",
         "database": "JawsDB",
-        "host": "127.0.0.1",
+        "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     }
 }
