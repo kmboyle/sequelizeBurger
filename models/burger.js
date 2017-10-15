@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1, 30]
             }
         },
-        devoured: { type: DataTypes.BOOLEAN, defaultValue: 0 },
+        devoured: { type: DataTypes.BOOLEAN, defaultValue: false },
 
         //date: DataTypes.DATE,
     }, {
@@ -16,11 +16,8 @@ module.exports = function(sequelize, DataTypes) {
     });
     Burger.associate = function(models) {
         Burger.hasOne(models.Customer, {
-
             onUpdate: "cascade"
         });
     }
-
-
     return Burger;
 }

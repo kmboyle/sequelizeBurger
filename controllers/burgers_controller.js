@@ -41,7 +41,7 @@ router.put("/:id", function(req, res) {
         BurgerId: req.params.id
     });
     db.Burger.update({
-        devoured: true,
+        devoured: req.body.devoured,
     }, {
         where: {
             id: req.params.id
