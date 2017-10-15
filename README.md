@@ -4,4 +4,4 @@ Showcasing sequelize, MySQL, Node.js, and front end technologies JavaScript, CSS
 
 Check it out here : https://aqueous-stream-85225.herokuapp.com/
 
-![image not found] (https://github.com/kmboyle/sequelizeBurger/blob/master/public/assets/img/burger_app.JPG)
+![image not found](https://github.com/kmboyle/sequelizeBurger/blob/master/public/assets/img/burger_app.JPG)
